@@ -4,17 +4,17 @@ module.exports = {
     outputStyle: 'sass', /* less || scss || sass || styl */
     columns: 12, /* number of grid columns */
     offset: '40px', /* gutter width px || % || rem */
-    mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
+    mobileFirst: true, /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
         maxWidth: '1160px', /* max-width оn very large screen */
         fields: '40px' /* side fields */
     },
     breakPoints: {
         md: {
-            width: "1365px",
+            width: "992px",
         },
 		sm: {
-            width: "1023px",
+            width: "768px",
         },
         xs: {
             width: "639px",

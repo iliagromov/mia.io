@@ -5,8 +5,12 @@ block title
 	title About Mia
 block append style
 block content
-	include ../../components/about-page/about-page.component.pug
+	include ../../components/debuggrid/debuggrid.component.pug
+	include ../../components/header/header.component.pug
+	main.page.page-about
+		include ../../components/first-page/first-page.component.pug
 block append style
-
-
+	
 block append script
+	script(src="/js/debuggrid/debuggrid.component.js")
+	script(src="/js/header/header.component.js")

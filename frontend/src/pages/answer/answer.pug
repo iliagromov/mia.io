@@ -1,0 +1,15 @@
+extends ../../pug/templates/template
+block base
+    base(href="../")
+block title 
+    title Answer Mia
+block content
+    include ../../components/debuggrid/debuggrid.component.pug
+    include ../../components/header/header.component.pug
+    main.page.page-answer 
+        div sd 
+
+
+block append script 
+    script(src="/js/debuggrid/debuggrid.component.js")
+    script(src="/js/header/header.component.js")

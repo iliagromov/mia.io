@@ -1,1 +1,15 @@
 //-first-page
+section.first-page
+    .wrapper
+       .first-page-inner
+            h1.page-title.page-title-h1  Hey! You've just taken a step into a space, where your feelings and experiences matter.
+            p.page-text A place that’s safe, supportive, and entirely non-judgmental. Here you're accepted, just as you are.
+            h2.page-title.page-title-h2 Choose which story you want to tell 
+            form.page-form(action="", method="post") 
+                v-select(
+                    :items="['What is your biggest regret?', 'Who was your greatest love and why did you fall in love with them?', 'The words that hurt you the most?', 'How are you? (Just be honest)', 'Write a letter that he/she will never read.', 'Other']"
+                    density="compact"
+                    label="Select"
+                )
+                v-textarea(label="What is your biggest regret?")
+            a.page-btn.page-btn_blue(href="./about/about.html") Submit

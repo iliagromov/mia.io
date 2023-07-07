@@ -1,0 +1,56 @@
+.page
+
+    &-title
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            z-index: -1
+            display: inline-block
+            width: 250px
+            height: 8px
+            background: #D6FF97
+        &-h1
+            font-family: Inter-Bold
+            font-size: 26px
+            +md-block
+                font-size: 48px
+                line-height: 100%
+        &-h2
+            font-family: Inter-Bold
+            font-size: 24px
+            +md-block
+                font-size: 40px
+                line-height: 100%
+
+    &-text
+        font-size: 18px
+        line-height: 133%
+
+    &-form
+        padding: 15px
+
+    &-btn
+        
+        border: 2px solid transparent
+        border-radius: 8px
+        font-family: Inter-Bold
+        font-size: 16px
+        line-height: 133%
+        padding: 20px
+        box-sizing: border-box
+        display: inline-flex
+        justify-content: center
+        +transitionBase()
+
+        &_blue
+            color: #fff
+            background: #2778F1
+            border-color:   #2778F1
+
+            &:hover
+                color: #2778F1
+                background: #fff
+        &_white
