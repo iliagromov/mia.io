@@ -1,36 +1,70 @@
 .page
+    position: relative
+    &-index
+        padding: 90px 0 0
+
+    &::before,
+    &::after
+        content: ''
+        position: absolute
+
+    &::before
+
+        top: -50px
+        left: -150px
+        background-image: url('../assets/images/bg-ellipse-green.svg')
+        display: inline-flex
+        width: 500px
+        height: 500px
+        justify-content: center
+        background-size: 100%
+    
+    &::after
+        top: 0
+        right: 12%
+        background-image: url('../assets/images/bg-circes-green.svg')
+
+        justify-content: center
+        background-size: 100%
+        display: inline-flex
+        width: 130px
+        height: 130px
 
     &-title
         position: relative
+        display: inline-flex
         &::after
             content: ''
             position: absolute
-            left: 0
-            bottom: 0
+            
+            bottom: 2px
             z-index: -1
             display: inline-block
-            width: 250px
+            width: 50%
             height: 8px
             background: #D6FF97
+            left: 50%
+            transform: translateX(-50%)
         &-h1
             font-family: Inter-Bold
             font-size: 26px
             +md-block
                 font-size: 48px
-                line-height: 100%
+                line-height: 127%
         &-h2
             font-family: Inter-Bold
             font-size: 24px
+            line-height: 117%
             +md-block
                 font-size: 40px
-                line-height: 100%
 
     &-text
         font-size: 18px
         line-height: 133%
+        +md-block
+            font-size: 24px
 
     &-form
-        padding: 15px
 
     &-btn
         
@@ -54,3 +88,25 @@
                 color: #2778F1
                 background: #fff
         &_white
+            
+            
+    &-link
+        font-size: 14px
+        color: #2778F1
+        text-decoration: underline
+        
+
+.page-form
+    .v-input
+        &__control
+            min-height: 64px
+            border-radius: 8px
+            border: 2px solid rgba(39, 49, 63, 0.10)
+            background: transparent
+    .v-textarea
+        .v-input
+            &__control
+                min-height: 320px
+
+.v-field--variant-filled .v-field__overlay
+    background-color: transparent

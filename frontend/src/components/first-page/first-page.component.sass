@@ -1,1 +1,30 @@
 /*first-page*/
+.first-page
+    text-align: center
+    padding: 0 0 20px
+    &-inner
+
+    .page-text
+        +size(12)
+        +size-md(5)
+        margin: 8% auto 0
+
+    .page-title-h1
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            background-image: url('../assets/images/EnvelopeSimpleOpen.svg')
+            width: 50px
+            height: 50px
+    .page-title-h2
+        margin-top: 10%
+
+    .page-form
+        +size(12)
+        +size-md(8)
+        margin: 6% auto 0
+    
+    .page-btn
+        +size(12)
+        +size-md(8)
