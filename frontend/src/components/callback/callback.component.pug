@@ -1,0 +1,23 @@
+//-callback
+section.callback
+    .wrapper
+        .callback-inner
+            form.page-form.callback-form(action="", method="post")
+                .callback__avatar
+                    img(src="../assets/images/Avatar.svg", alt="Avatar")
+                h3.page-title-h3 Now, let's return to the most important part your message
+                v-text-field(label="Email address" placeholder="johndoe@gmail.com"  variant="outlined" type="email")
+                v-checkbox(v-model="ex3"
+                    label="primary"
+                    color="primary"
+                    value="primary"
+                    hide-details) 
+                
+                div By signing up you agree to the 
+                    a.page-link(href="javascript:void(0)") Terms of Use 
+                    | and 
+                    a.page-link(href="javascript:void(0)") Privacy Policy
+                button.page-btn.page-btn_blue(type="submit") Get a response
+                a.page-btn.page-btn_white(href="answer/answer.html") Continue without email
+
+                    
