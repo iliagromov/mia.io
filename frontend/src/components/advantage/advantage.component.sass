@@ -1,0 +1,41 @@
+/*advantage*/
+.advantage
+    &-inner
+        +row-flex
+
+    &-item
+        +col
+        +size(12)
+        +size-md(3)
+        display: flex
+        flex-wrap: wrap
+        +to($break_md)
+            align-items: center
+
+        &:nth-child(even)
+            .advantage-item__icon
+                +to($break_md)
+                    order: 1
+            .advantage-item__text
+                +to($break_md)
+                    order: 0
+            
+      
+
+        &__icon
+            flex-basis: 50%
+            text-align: center
+            height: 140px
+            display: flex
+            align-items: center
+            justify-content: center
+            +md-block
+                flex-basis: 100%
+
+        &__text
+            flex-basis: 50%
+            margin: 0 auto
+            text-align: center
+            +md-block
+                flex-basis: 80%
+                width: 80%

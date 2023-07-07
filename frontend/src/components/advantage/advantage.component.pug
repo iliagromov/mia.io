@@ -1,0 +1,33 @@
+mixin item(props)
+    .advantage-item
+        .advantage-item__icon
+            img(src=`../assets/images/${props.img}.svg`, alt="icon")
+        .advantage-item__text !{props.title}
+
+mixin items(arr)
+    each obj in arr
+        +item(obj)
+
+//-advantage
+section.advantage
+    .wrapper
+        .advantage-inner
+            +items([
+                {
+                    title:' Do you feel like you’ve <strong>missed a moment</strong> in life?',
+                    img:'advantage-item-1'
+                },
+                {
+                    title:'Do you feel Like you’re <strong>walking in circles?</strong> ',
+                    img:'advantage-item-2'
+                },
+                {
+                    title:'You cannot get  <strong>rid of the pain?</strong>',
+                    img:'advantage-item-3'
+                },
+                {
+                    title:'Are you <strong>unable to control</strong> your emotions, and instead?',
+                    img:'advantage-item-4'
+                },
+            ])
+            

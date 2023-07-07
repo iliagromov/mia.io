@@ -1,4 +1,45 @@
 /*about-page*/
+/*advantage*/
+.advantage
+    &-inner
+        +row-flex
+
+    &-item
+        +col
+        +size(12)
+        +size-md(3)
+        display: flex
+        flex-wrap: wrap
+        +to($break_md)
+            align-items: center
+
+        &:nth-child(even)
+            .advantage-item__icon
+                +to($break_md)
+                    order: 1
+            .advantage-item__text
+                +to($break_md)
+                    order: 0
+            
+      
+
+        &__icon
+            flex-basis: 50%
+            text-align: center
+            height: 140px
+            display: flex
+            align-items: center
+            justify-content: center
+            +md-block
+                flex-basis: 100%
+
+        &__text
+            flex-basis: 50%
+            margin: 0 auto
+            text-align: center
+            +md-block
+                flex-basis: 80%
+                width: 80%
 /*banner*/
 .banner
     &-inner
@@ -10,7 +51,6 @@
 
     &__text
         
-        +size(12)
         +size-md(6)
         +md-block
             +col
@@ -152,6 +192,30 @@
     &__links
         .page-link
             +col
+/*get-acquainted*/
+.get-acquainted
+    padding: 100px 0
+    &-massage
+        +size(12)
+        +size-md(8)
+     
+        display: flex
+        flex-wrap: wrap
+        margin: 0 auto
+        border-radius: 8px
+        box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.1)
+        padding: 30px
+        +md-block
+            padding: 60px 40px
+        &__icon
+            flex-basis: 100%
+            +md-block
+                flex-basis: 10%
+        &__text
+            flex-basis: 90%
+            font-size: 14px
+            p
+                padding-bottom: 10px
 .header
     padding: 44px 0
     &-inner
