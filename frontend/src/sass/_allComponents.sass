@@ -234,3 +234,41 @@
             align-items: center
             img
                 margin-right: 5px
+/*info-block*/
+.info-block
+    padding: 50px 0
+    &-inner
+        +row-flex
+
+    .page-text
+        padding-top: 20px
+        font-size: 18px
+
+    &__title
+        text-align: center
+        padding-bottom: 40px
+        .page-title,
+        .page-text
+            text-align: center
+            +md-block
+                width: 60%
+                margin: 0 auto
+
+    &__image
+        +col
+        +size(12)
+        +size-md(6)
+
+    &__text
+        +col
+        +size(12)
+        +size-md(6)
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        .page-title
+            &-h2
+                &::after
+                    left: 0
+                    transform: translate(0)
