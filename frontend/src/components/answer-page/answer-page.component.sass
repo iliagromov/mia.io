@@ -1,0 +1,75 @@
+/*answer-page*/
+.answer-page
+    padding: 10px 0 50px
+    &-inner
+        +row-flex
+
+    .page-title-h2 
+        width: 100%
+        display: flex
+        justify-content: center
+
+    .question-answer
+        +col
+        +size(12)
+        +size-md(8)
+        padding: 30px
+        margin: 0 auto 50px
+        box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.3)
+        border-radius: 8px
+        display: flex
+        flex-direction: column
+
+    .message
+        color: #fff
+        background: #2778F1
+        padding: 20px 30px
+        font-size: 16px
+        display: inline-block
+        margin-bottom: 10px
+        border-radius: 30px 30px 30px 0
+        max-width: 80%
+        +md-block
+            max-width: 50%
+        &:nth-child(odd)
+            align-self: flex-end
+            border-radius: 30px 30px 0 30px
+            
+    &__advantages
+        padding-top: 50px
+        +col
+        +size(12)
+        +size-md(8)
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        margin: 0 auto
+
+    .answer-advantages-item
+        +col
+        +size(12)
+        +size-md(6)
+        display: flex
+        align-items: center
+        
+        margin-bottom: 28px
+
+        &__icon
+            flex-basis: 15%
+            img
+                width: 32px
+                height: 32px
+        &__text
+            flex-basis: 75%
+            .page-text
+                font-size: 16px
+    &__quiz
+        +col
+        +size(12)
+        +size-md(8)
+        margin: 0 auto
+        text-align: center
+        .page-btn
+            width: 100%
+            +md-block
+                width: 70%

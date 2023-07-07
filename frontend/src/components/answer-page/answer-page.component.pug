@@ -1,0 +1,44 @@
+mixin item(props)
+ .answer-advantages-item
+    .answer-advantages-item__icon
+        img(src=`assets/images/${props.img}`, alt="answer")
+    .answer-advantages-item__text
+        p.page-text #{props.text}
+
+mixin items(arr)
+    each obj in arr
+        +item(obj)
+
+//-answer-page
+section.answer-page
+    .wrapper
+        .answer-page-inner
+            .question-answer
+                .message.question.question-answer__message What is your biggest regret?
+                .message.answer.question-answer__message What is *Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptas commodi ex quaerat aperiam vitae dolores tenetur blanditiis culpa officia sequi, doloremque accusamus illo nisi error fugit perspiciatis distinctio tempore? Quasi quae aspernatur architecto nihil officiis rem fugiat, cupiditate minus natus doloremque facilis veniam laboriosam dolores necessitatibus beatae, in reiciendis illo ad adipisci doloribus et excepturi consectetur alias voluptate. Recusandae? Vel recusandae rerum numquam magni accusantium hic ullam, harum inventore qui expedita ab porro a perspiciatis officiis beatae sequi vitae. Culpa eveniet molestias dolore eum fugiat voluptatum consectetur necessitatibus enim. ... ?
+            h2.page-title.page-title-h2 With me, you can be sincere 
+            .answer-page__advantages
+                +items([
+                    {
+                        img:"Warning.svg",
+                        text:"I can't judge, and I won't reveal your secrets to anyone."
+                    },
+                    {
+                        img:"CheckCircle.svg",
+                        text:"Open up and discover your true desires."
+                    },
+                    {
+                        img:"CheckCircle.svg",
+                        text:"Be yourself. Share any thoughts and feelings."
+                    },
+                    {
+                        img:"CheckCircle.svg",
+                        text:"Coup with what's bothering you."
+                    },
+                    {
+                        img:"CheckCircle.svg",
+                        text:"Just talk about how your day went."
+                    }
+                ])
+            .answer-page__quiz
+                button.page-btn.page-btn_white Want to talk
