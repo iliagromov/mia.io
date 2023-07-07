@@ -42,3 +42,31 @@ section.answer-page
                 ])
             .answer-page__quiz
                 button.page-btn.page-btn_white Want to talk
+
+                .answer-page__quiz-title
+                    h3.page-title.page-title-h3 Section 1
+
+                .answer-page__quiz-section.answer-page__quiz-section-1
+                    h3.page-title.page-title-h3 Do you have Telegram app?
+                    p.page-text Telegram is an analog of WhatsApp. Messenger in which we will communicate
+                    .answer-page__quiz-actions
+                        button.page-btn.page-btn_blue YES
+                        button.page-btn.page-btn_white NO
+                        
+                .answer-page__quiz-title
+                    h3.page-title.page-title-h3 Section NO
+
+                .answer-page__quiz-section.answer-page__quiz-section-2 
+                    h3.page-title.page-title-h3 Get instructions on how to install Telegram app
+                    v-text-field(label="Email address" placeholder="johndoe@gmail.com"  variant="outlined" type="email")
+                    v-checkbox(v-model="ex3"
+                        label="primary"
+                        color="primary"
+                        value="primary"
+                        hide-details) 
+                    
+                    div By signing up you agree to the 
+                        a.page-link(href="javascript:void(0)") Terms of Use 
+                        | and 
+                        a.page-link(href="javascript:void(0)") Privacy Policy
+                    button.page-btn.page-btn_blue(type="submit") Get a response
