@@ -1,0 +1,13 @@
+extends ../pug/templates/template
+block title
+	title Hi i'm Mia
+block append style
+block content
+	include ../components/debuggrid/debuggrid.component.pug
+	include ../components/header/header.component.pug
+	include ../components/first-page/first-page.component.pug
+block append style
+	
+block append script
+	script(src="/js/debuggrid/debuggrid.component.js")
+	script(src="/js/header/header.component.js")
