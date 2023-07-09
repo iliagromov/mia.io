@@ -15,58 +15,56 @@ section.answer-page
         .answer-page-inner
             .question-answer
                 .message.question.question-answer__message What is your biggest regret?
-                .message.answer.question-answer__message What is *Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptas commodi ex quaerat aperiam vitae dolores tenetur blanditiis culpa officia sequi, doloremque accusamus illo nisi error fugit perspiciatis distinctio tempore? Quasi quae aspernatur architecto nihil officiis rem fugiat, cupiditate minus natus doloremque facilis veniam laboriosam dolores necessitatibus beatae, in reiciendis illo ad adipisci doloribus et excepturi consectetur alias voluptate. Recusandae? Vel recusandae rerum numquam magni accusantium hic ullam, harum inventore qui expedita ab porro a perspiciatis officiis beatae sequi vitae. Culpa eveniet molestias dolore eum fugiat voluptatum consectetur necessitatibus enim. ... ?
+                .message.answer.question-answer__message.textAnswer What is *Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptas commodi ex quaerat aperiam vitae dolores tenetur blanditiis culpa officia sequi, doloremque accusamus illo nisi error fugit perspiciatis distinctio tempore? Quasi quae aspernatur architecto nihil officiis rem fugiat, cupiditate minus natus doloremque facilis veniam laboriosam dolores necessitatibus beatae, in reiciendis illo ad adipisci doloribus et excepturi consectetur alias voluptate. Recusandae? Vel recusandae rerum numquam magni accusantium hic ullam, harum inventore qui expedita ab porro a perspiciatis officiis beatae sequi vitae. Culpa eveniet molestias dolore eum fugiat voluptatum consectetur necessitatibus enim. ... ?
             h2.page-title.page-title-h2 With me, you can be sincere 
             .answer-page__advantages
-                +items([
-                    {
-                        img:"Warning.svg",
-                        text:"I can't judge, and I won't reveal your secrets to anyone."
-                    },
-                    {
-                        img:"CheckCircle.svg",
-                        text:"Open up and discover your true desires."
-                    },
-                    {
-                        img:"CheckCircle.svg",
-                        text:"Be yourself. Share any thoughts and feelings."
-                    },
-                    {
-                        img:"CheckCircle.svg",
-                        text:"Coup with what's bothering you."
-                    },
-                    {
-                        img:"CheckCircle.svg",
-                        text:"Just talk about how your day went."
-                    }
-                ])
+                //- +items([
+                //-     {
+                //-         img:"Warning.svg",
+                //-         text:"I can't judge, and I won't reveal your secrets to anyone."
+                //-     },
+                //-     {
+                //-         img:"CheckCircle.svg",
+                //-         text:"Open up and discover your true desires."
+                //-     },
+                //-     {
+                //-         img:"CheckCircle.svg",
+                //-         text:"Be yourself. Share any thoughts and feelings."
+                //-     },
+                //-     {
+                //-         img:"CheckCircle.svg",
+                //-         text:"Coup with what's bothering you."
+                //-     },
+                //-     {
+                //-         img:"CheckCircle.svg",
+                //-         text:"Just talk about how your day went."
+                //-     }
+                //- ])
             .answer-page__quiz
-                button.page-btn.page-btn_white Want to talk
+                .answer-page__quiz-(v-if="quizSection === 0")
+                    v-btn.page-btn.page-btn_white(@click="quizSection=1") Want to talk
 
-                .answer-page__quiz-title
-                    h3.page-title.page-title-h3 Section 1
 
-                .answer-page__quiz-section.answer-page__quiz-section-1
+                .answer-page__quiz-section(v-if="quizSection === 1")
                     h3.page-title.page-title-h3 Do you have Telegram app?
                     p.page-text Telegram is an analog of WhatsApp. Messenger in which we will communicate
                     .answer-page__quiz-actions
-                        button.page-btn.page-btn_blue YES
-                        button.page-btn.page-btn_white NO
+                        a.page-btn.page-btn_blue(href="javascript:void(0)" target="_blank") YES
+                        v-btn.page-btn.page-btn_white(@click="quizSection=2") NO
                         
-                .answer-page__quiz-title
-                    h3.page-title.page-title-h3 Section NO
 
-                .answer-page__quiz-section.answer-page__quiz-section-2 
+                .answer-page__quiz-section(v-if="quizSection === 2")
                     h3.page-title.page-title-h3 Get instructions on how to install Telegram app
-                    v-text-field(label="Email address" placeholder="johndoe@gmail.com"  variant="outlined" type="email")
-                    v-checkbox(v-model="ex3"
-                        label="primary"
-                        color="primary"
-                        value="primary"
-                        hide-details) 
-                    
-                    div By signing up you agree to the 
-                        a.page-link(href="javascript:void(0)") Terms of Use 
-                        | and 
-                        a.page-link(href="javascript:void(0)") Privacy Policy
-                    button.page-btn.page-btn_blue(type="submit") Get a response
+                    form.page-form.callback-form(action="", method="post")
+                        input(type="hidden", name="email" :value="email")
+                        v-text-field(
+                            v-model="email"
+                            label="Email address" 
+                            placeholder="johndoe@gmail.com"  
+                            variant="outlined" type="email")
+
+                        div By signing up you agree to the 
+                            a.page-link(href="javascript:void(0)") Terms of Use 
+                            | and 
+                            a.page-link(href="javascript:void(0)") Privacy Policy
+                        button.page-btn.page-btn_blue(type="submit") Get a response

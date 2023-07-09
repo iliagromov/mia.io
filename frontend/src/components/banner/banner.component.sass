@@ -8,7 +8,7 @@
             transform: translate(0)
 
     &__text
-        
+        +col
         +size-md(6)
         +md-block
             +col
@@ -22,6 +22,9 @@
                     transform: translate(0)
             &-h3
                 padding-top: 13%
+                &::after
+                    left: 0
+                    transform: translate(0)
                 
         
     &__advantages
@@ -72,17 +75,17 @@
             +col
 
         order: 2
-        padding-top: 18%
         +md-block
             order: 1
             padding-top: 0
 
 
     &__title
+        +col
         width: 100%
-        padding-top: 15%
+        padding: 15% 0 12%
         order: 1
         +md-block
-            padding-top: 8%
+            padding: 8% 0 0
             order: 2
             text-align: center

@@ -6,12 +6,23 @@ section.first-page
             p.page-text A place that’s safe, supportive, and entirely non-judgmental. Here you're accepted, just as you are.
             h2.page-title.page-title-h2 Choose which story <br> you want to tell 
             form.page-form(action="", method="post") 
+                input(type="hidden", name="question" :value="question")
+                input(type="hidden", name="answer" :value="textarea")
                 v-select(
+                    v-model="question"
                     :items="['What is your biggest regret?', 'Who was your greatest love and why did you fall in love with them?', 'The words that hurt you the most?', 'How are you? (Just be honest)', 'Write a letter that he/she will never read.', 'Other']"
                     density="compact"
-                    label="What is your biggest regret?"
+                    label="Select question"
                     variant="solo"
                 )
-                v-textarea(label="What is your biggest regret?" no-resize 
-                        variant="solo")
-            a.page-btn.page-btn_blue(href="./about/about.html") Submit
+                v-textarea(
+                    v-model="textarea"
+                    label="Write it down and let it go" 
+                    no-resize 
+                    variant="solo"
+                    required
+                    )
+                    a.page-btn.page-btn_blue(
+                        href="./about/about.html"
+                        :disabled="isTextarea"
+                        ) Submit

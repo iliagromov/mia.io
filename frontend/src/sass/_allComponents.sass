@@ -55,12 +55,15 @@
         +col
         +size(12)
         +size-md(8)
-        padding: 30px
+        
         margin: 0 auto 50px
-        box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.3)
+        
         border-radius: 8px
         display: flex
         flex-direction: column
+        +md-block
+            padding: 30px
+            box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.3)
 
     .message
         color: #fff
@@ -70,7 +73,7 @@
         display: inline-block
         margin-bottom: 10px
         border-radius: 30px 30px 30px 0
-        max-width: 80%
+        max-width: 100%
         +md-block
             max-width: 50%
         &:nth-child(odd)
@@ -145,7 +148,7 @@
             transform: translate(0)
 
     &__text
-        
+        +col
         +size-md(6)
         +md-block
             +col
@@ -159,6 +162,9 @@
                     transform: translate(0)
             &-h3
                 padding-top: 13%
+                &::after
+                    left: 0
+                    transform: translate(0)
                 
         
     &__advantages
@@ -209,18 +215,18 @@
             +col
 
         order: 2
-        padding-top: 18%
         +md-block
             order: 1
             padding-top: 0
 
 
     &__title
+        +col
         width: 100%
-        padding-top: 15%
+        padding: 15% 0 12%
         order: 1
         +md-block
-            padding-top: 8%
+            padding: 8% 0 0
             order: 2
             text-align: center
 /*callback*/
@@ -229,8 +235,12 @@
     &-inner
         +row-flex
         justify-content: center
+    &-link
+        text-align: center
+        width: 100%
+        display: inline-block
+        margin: 20px 0
     .callback-form
-        +col
         +size(12)
         +size-md(6)
         border-radius: 8px
@@ -243,6 +253,7 @@
         .page-btn
             width: 100%
             margin-top: 15px
+
 /* __debugGrid__ */
 .debugGrid
     height: 100vh
@@ -299,6 +310,9 @@
 .footer
     padding: 30px 0
     background: #F5F5F5
+    display: none
+    +md-block
+        display: block
     &-inner
         +row-flex
         justify-content: space-between
@@ -308,8 +322,37 @@
         .page-link
             +col
 /*form*/
+/*get-acquainted*/
+.get-acquainted
+    padding: 100px 0
+    &-massage
+        +size(12)
+        +size-md(8)
+     
+        display: flex
+        flex-wrap: wrap
+        margin: 0 auto
+        border-radius: 8px
+        box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.1)
+        
+        +md-block
+            padding: 60px 40px
+        &__icon
+            flex-basis: 100%
+            +md-block
+                flex-basis: 10%
+        &__text
+            flex-basis: 90%
+            font-size: 14px
+            p
+                padding-bottom: 10px
+
+
 .header
     padding: 44px 0
+    display: none
+    +md-block
+        display: block
     &-inner
         +row-flex
         align-items: center
@@ -337,8 +380,13 @@
         font-size: 18px
 
     &__title
+        +col
         text-align: center
         padding-bottom: 40px
+
+        .page-title
+            margin: 30% 0 
+
         .page-title,
         .page-text
             text-align: center
@@ -364,28 +412,3 @@
                 &::after
                     left: 0
                     transform: translate(0)
-
-/*get-acquainted*/
-.get-acquainted
-    padding: 100px 0
-    &-massage
-        +size(12)
-        +size-md(8)
-     
-        display: flex
-        flex-wrap: wrap
-        margin: 0 auto
-        border-radius: 8px
-        box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.1)
-        padding: 30px
-        +md-block
-            padding: 60px 40px
-        &__icon
-            flex-basis: 100%
-            +md-block
-                flex-basis: 10%
-        &__text
-            flex-basis: 90%
-            font-size: 14px
-            p
-                padding-bottom: 10px
