@@ -2,23 +2,25 @@
 section.callback
     .wrapper
         .callback-inner
-            form.page-form.callback-form(action="", method="post")
+            v-form.page-form.callback-form(action="", method="post")
                 input(type="hidden", name="email" :value="email")
                 .callback__avatar
-                    img(src="../assets/images/Avatar.svg", alt="Avatar")
-                h3.page-title-h3 Now, let's return to the most important part your message
+                    img(src="../assets/images/Avatar.png", alt="Avatar")
+                h3.page-title-h3 I'll send feedback and support on the story you told 
                 v-text-field(
                     v-model="email"
+                    type="email"
                     label="Email address" 
                     placeholder="johndoe@gmail.com"  
                     variant="outlined" 
-                    type="email")
+                    :rules="emailRules"
+                    )
                 
-                div By signing up you agree to the 
+                div.privacy By signing up you agree to the 
                     a.page-link(href="javascript:void(0)") Terms of Use 
                     | and 
                     a.page-link(href="javascript:void(0)") Privacy Policy
-                button.page-btn.page-btn_blue(type="submit") Get a response
+                v-btn.page-btn.page-btn_blue(type="submit") Get a response
                 a.page-link.callback-link(href="answer/answer.html") Continue without email
 
                     

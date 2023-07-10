@@ -13,10 +13,14 @@
         +md-block
             +col
         .page-title
-            +size(12)
+           
             +size-sm(8)
             +size-md(10)
             &-h2
+                margin-top: 20px
+                +md-block
+                    margin-top: 0
+                  
                 &::after
                     left: 0
                     transform: translate(0)
@@ -37,7 +41,7 @@
         +size-md(6)
             
 
-        padding-top: 9%
+        padding-top: 15%
         display: flex
         flex-wrap: wrap
         &__icon
@@ -71,12 +75,10 @@
         
         width: 100%
         +size-md(6)
+
+        padding-top: 15%
         +md-block
             +col
-
-        order: 2
-        +md-block
-            order: 1
             padding-top: 0
 
 
@@ -84,8 +86,6 @@
         +col
         width: 100%
         padding: 15% 0 12%
-        order: 1
         +md-block
             padding: 8% 0 0
-            order: 2
             text-align: center

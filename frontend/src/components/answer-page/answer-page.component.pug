@@ -16,8 +16,7 @@ section.answer-page
             .question-answer
                 .message.question.question-answer__message What is your biggest regret?
                 .message.answer.question-answer__message.textAnswer What is *Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptas commodi ex quaerat aperiam vitae dolores tenetur blanditiis culpa officia sequi, doloremque accusamus illo nisi error fugit perspiciatis distinctio tempore? Quasi quae aspernatur architecto nihil officiis rem fugiat, cupiditate minus natus doloremque facilis veniam laboriosam dolores necessitatibus beatae, in reiciendis illo ad adipisci doloribus et excepturi consectetur alias voluptate. Recusandae? Vel recusandae rerum numquam magni accusantium hic ullam, harum inventore qui expedita ab porro a perspiciatis officiis beatae sequi vitae. Culpa eveniet molestias dolore eum fugiat voluptatum consectetur necessitatibus enim. ... ?
-            h2.page-title.page-title-h2 With me, you can be sincere 
-            .answer-page__advantages
+            //- .answer-page__advantages
                 //- +items([
                 //-     {
                 //-         img:"Warning.svg",
@@ -41,30 +40,41 @@ section.answer-page
                 //-     }
                 //- ])
             .answer-page__quiz
-                .answer-page__quiz-(v-if="quizSection === 0")
-                    v-btn.page-btn.page-btn_white(@click="quizSection=1") Want to talk
-
-
-                .answer-page__quiz-section(v-if="quizSection === 1")
-                    h3.page-title.page-title-h3 Do you have Telegram app?
-                    p.page-text Telegram is an analog of WhatsApp. Messenger in which we will communicate
-                    .answer-page__quiz-actions
-                        a.page-btn.page-btn_blue(href="javascript:void(0)" target="_blank") YES
-                        v-btn.page-btn.page-btn_white(@click="quizSection=2") NO
-                        
-
-                .answer-page__quiz-section(v-if="quizSection === 2")
-                    h3.page-title.page-title-h3 Get instructions on how to install Telegram app
-                    form.page-form.callback-form(action="", method="post")
+                .answer-page__quiz-section
+                    v-form.page-form.callback-form(action="", method="post")
                         input(type="hidden", name="email" :value="email")
-                        v-text-field(
+                        h3.page-title.page-title-h3 To continue the conversation, please enter email
+                        p.page-text It is necessary to preserve our correspondence. If you want to remain anonymous, you will have to tell me the story again.
+                        v-text-field.page-input(
                             v-model="email"
                             label="Email address" 
                             placeholder="johndoe@gmail.com"  
-                            variant="outlined" type="email")
+                            variant="outlined" 
+                            type="email"
+                            :rules="emailRules"
+                            )
 
-                        div By signing up you agree to the 
+                        div.privacy By signing up you agree to the 
                             a.page-link(href="javascript:void(0)") Terms of Use 
                             | and 
                             a.page-link(href="javascript:void(0)") Privacy Policy
-                        button.page-btn.page-btn_blue(type="submit") Get a response
+                        v-btn.page-btn.page-btn_blue(type="submit") Get a response
+                .answer-page__quiz-section
+                    h3.page-title.page-title-h3 Do you have <br>Telegram app?
+                    p.page-text Telegram is an analog of WhatsApp. Messenger in which we will communicate
+                    .answer-page__quiz-actions
+                        a.page-btn.page-btn_blue(href="javascript:void(0)" target="_blank") YES
+                        v-btn.page-btn.page-btn_white(v-if="!sayNo" @click="sayNo = !sayNo") NO
+                        
+                        v-form.page-form.callback-form(v-if="sayNo" action="", method="post")
+                            h3.page-title.page-title-h3(v-if="sayNo") Get instructions on how to install <br>Telegram app
+                            input(type="hidden", name="email" :value="email")
+                            v-text-field.page-input(
+                                v-model="email"
+                                label="Email address" 
+                                placeholder="johndoe@gmail.com"  
+                                variant="outlined" 
+                                type="email"
+                                :rules="emailRules"
+                                )
+                            v-btn.page-btn.page-btn_blue(type="submit") Get instructions

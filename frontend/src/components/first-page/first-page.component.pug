@@ -2,10 +2,11 @@
 section.first-page
     .wrapper
        .first-page-inner
-            h1.page-title.page-title-h1  Hey! <br> You've just taken a step into a space, where your feelings and experiences matter.
+            h1.page-title.page-title-h1  Stranger, hey! 
+            p.page-text You've just taken a step into a space, where your feelings and experiences matter.
             p.page-text A place that’s safe, supportive, and entirely non-judgmental. Here you're accepted, just as you are.
             h2.page-title.page-title-h2 Choose which story <br> you want to tell 
-            form.page-form(action="", method="post") 
+            v-form.page-form(action="", method="post") 
                 input(type="hidden", name="question" :value="question")
                 input(type="hidden", name="answer" :value="textarea")
                 v-select(
@@ -20,9 +21,9 @@ section.first-page
                     label="Write it down and let it go" 
                     no-resize 
                     variant="solo"
-                    required
+                    :rules="textareaRules"
                     )
-                    a.page-btn.page-btn_blue(
-                        href="./about/about.html"
-                        :disabled="isTextarea"
-                        ) Submit
+                v-btn.page-btn.page-btn_blue(
+                    type="submit"
+                    ) Submit
+                a.page-link.callback-link(href="./about/about.html") next 
