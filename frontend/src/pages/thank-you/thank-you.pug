@@ -1,0 +1,14 @@
+extends ../../pug/templates/template
+block base
+    base(href="../")
+block title 
+    title Thank you
+block content
+   
+    main#app.page.page-thank-you
+        include ../../components/thank-you/thank-you.component.pug
+
+
+block append script 
+    script(src="/js/debuggrid/debuggrid.component.js")
+    script(src="/js/header/header.component.js")

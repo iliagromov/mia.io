@@ -1,6 +1,10 @@
 /*about-page*/
 /*advantage*/
 .advantage
+   
+    +to($break_md)
+        padding: 50px 0
+        
     &-inner
         +row-flex
 
@@ -10,36 +14,31 @@
         +size-md(3)
         display: flex
         flex-wrap: wrap
+      
         +to($break_md)
+            margin: 50px 0
             align-items: center
 
-        &:nth-child(even)
-            .advantage-item__icon
-                +to($break_md)
-                    order: 1
-            .advantage-item__text
-                +to($break_md)
-                    order: 0
             
       
 
         &__icon
-            flex-basis: 50%
+            // flex-basis: 50%
             text-align: center
             height: 140px
             display: flex
             align-items: center
             justify-content: center
-            +md-block
-                flex-basis: 100%
+            
+            flex-basis: 100%
 
         &__text
-            flex-basis: 50%
+            // flex-basis: 50%
             margin: 0 auto
             text-align: center
-            +md-block
-                flex-basis: 80%
-                width: 80%
+            
+            flex-basis: 80%
+            width: 80%
 /*answer-page*/
 .answer-page
     padding: 10px 0 50px
@@ -55,7 +54,8 @@
         +col
         +size(12)
         +size-md(8)
-        max-height: 30vh
+        min-height: 80vh
+        max-height: 90vh
         overflow: scroll
         
         margin: 0 auto 50px
@@ -147,6 +147,7 @@
 
 .privacy
     font-size: 12px
+    margin-bottom: 10px
 /*banner*/
 .banner
     &-inner
@@ -166,7 +167,7 @@
             +size-sm(8)
             +size-md(10)
             &-h2
-                margin-top: 20px
+                margin-top: 10%
                 +md-block
                     margin-top: 0
                   
@@ -188,9 +189,9 @@
         +col
         +size(12)
         +size-md(6)
-            
+        padding-top: 20px
 
-        padding-top: 15%
+        
         display: flex
         flex-wrap: wrap
         &__icon
@@ -242,7 +243,7 @@
 .callback
     padding: 20px 0
     img
-        width: 60px
+        
     &-inner
         +row-flex
         justify-content: center
@@ -309,12 +310,12 @@
             left: -69px
             top: 0
     .page-title-h2
-        margin-top: 10%
+        margin-top: 14%
 
     .page-form
-        +size(12)
+       
         +size-md(8)
-        margin: 6% auto 0
+        margin: 14% auto 0
     
     .page-btn
         +size(12)
@@ -343,14 +344,15 @@
         
         +size-md(8)
      
-        display: flex
-        flex-wrap: wrap
         margin: 0 auto
         border-radius: 8px
         box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.1)
         padding: 10px
+        min-height: 540px
+
         +md-block
             padding: 60px 40px
+            
         &__icon
             flex-basis: 100%
             img
@@ -383,8 +385,10 @@
     &__link
         +col
         .link
-            display: flex
-            align-items: center
+            display: none
+            +md-block
+                display: flex
+                align-items: center
             img
                 margin-right: 5px
 /*info-block*/
@@ -426,8 +430,34 @@
         justify-content: center
 
         .page-title
-            margin-bottom: 25px
+            margin-top: 10px
             &-h2
                 &::after
                     left: 0
                     transform: translate(0)
+
+/*thank-you*/
+.thank-you
+    &-inner
+        +row-flex
+        justify-content: center
+        align-items: center
+        height: 100vh
+    &__img 
+        +col
+        display: flex
+        justify-content: center
+        width: 100%
+        margin-bottom: 20px
+
+    &__text
+        +col
+        text-align: center
+
+    .page-title
+        margin-bottom: 20px
+
+    .page-text
+        +md-block
+            width: 80%
+            margin: 0 auto

@@ -1,5 +1,9 @@
 /*advantage*/
 .advantage
+   
+    +to($break_md)
+        padding: 50px 0
+        
     &-inner
         +row-flex
 
@@ -9,33 +13,28 @@
         +size-md(3)
         display: flex
         flex-wrap: wrap
+      
         +to($break_md)
+            margin: 50px 0
             align-items: center
 
-        &:nth-child(even)
-            .advantage-item__icon
-                +to($break_md)
-                    order: 1
-            .advantage-item__text
-                +to($break_md)
-                    order: 0
             
       
 
         &__icon
-            flex-basis: 50%
+            // flex-basis: 50%
             text-align: center
             height: 140px
             display: flex
             align-items: center
             justify-content: center
-            +md-block
-                flex-basis: 100%
+            
+            flex-basis: 100%
 
         &__text
-            flex-basis: 50%
+            // flex-basis: 50%
             margin: 0 auto
             text-align: center
-            +md-block
-                flex-basis: 80%
-                width: 80%
+            
+            flex-basis: 80%
+            width: 80%
