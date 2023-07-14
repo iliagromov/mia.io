@@ -1,33 +1,40 @@
 
-const { createApp } = Vue;
-const { createVuetify } = Vuetify;
-
-const vuetify = createVuetify();
-
-const app = createApp({
-  el: "#app",
-  data: () => ({
-    question: 'What is your biggest regret?',
-    textarea: '',
-    email: '',
-    isAnonimys: false,
-    quizSection: 0,
-    isShowGetInstructions: false,
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()\\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) || 'E-mail must be valid',
-    ],
-    textareaRules: [
-      v => !!v || 'Answer is required',
-    ],
+//vue
 
 
-  }),
+const vueApp = document.getElementById('app');
+if (vueApp) {
+  const { createApp } = Vue;
+  const { createVuetify } = Vuetify;
+  const vuetify = createVuetify();
 
-})
-app.use(vuetify).mount('#app');
+  const app = createApp({
+    el: "#app",
+    data: () => ({
+      question: 'What is your biggest regret?',
+      textarea: '',
+      email: '',
+      isAnonimys: false,
+      quizSection: 0,
+      isShowGetInstructions: false,
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()\\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) || 'E-mail must be valid',
+      ],
+      textareaRules: [
+        v => !!v || 'Answer is required',
+      ],
 
 
+    }),
+
+  })
+  app.use(vuetify).mount('#app');
+}
+
+
+
+// набор текста
 class Writer {
   constructor(node) {
     this.node = node;
@@ -59,6 +66,7 @@ const getAcquaintedText = document.querySelector('.getAcquaintedText');
 if (textAnswer) {
   new Writer(textAnswer);
 }
+
 var AcquaintedTextVisible = 0;
 
 if (getAcquaintedText) {
@@ -66,12 +74,12 @@ if (getAcquaintedText) {
   const callback = () => {
     AcquaintedTextVisible = AcquaintedTextVisible + 1;
     console.log("🚀 ~ file: main.js:66 ~ callback ~ AcquaintedTextVisible:", AcquaintedTextVisible)
-    
-    if(AcquaintedTextVisible === 2){
+
+    if (AcquaintedTextVisible === 2) {
       new Writer(getAcquaintedText);
       getAcquaintedText.style.visibility = "visible";
     }
-   
+
   }
   const options = {
     threshold: 0.5 // 1 – полная видимость элемента, 0.5 – половина и т.д.

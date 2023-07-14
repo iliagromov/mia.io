@@ -1,0 +1,12 @@
+extends ../../pug/templates/template
+block base
+    base(href="../")
+block title 
+    title Subscription
+block append headScript
+    script(src="https://www.paypal.com/sdk/js?client-id=AXkuwNnU89VzBseW7g950E_IDGDk59GTjWNlzip_042nQoJBoljWnebz7gF4pgXtNev7E6vdZDP9DGXW&vault=true&intent=subscription")
+    
+block content
+   
+    main.page.page-subscription
+        include ../../components/subscription/subscription.component.pug

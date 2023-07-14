@@ -68,6 +68,13 @@
             padding: 30px
             box-shadow: 0px 4px 48px 0px rgba(39, 49, 63, 0.3)
 
+        .page-title
+            justify-content: center
+
+        &__message
+            margin-top: 10px
+           
+
     .message
         color: #fff
         background: #2778F1
@@ -79,9 +86,6 @@
         max-width: 100%
         +md-block
             max-width: 50%
-        &:nth-child(odd)
-            align-self: flex-end
-            border-radius: 30px 30px 0 30px
             
     &__advantages
         padding-top: 50px
@@ -247,6 +251,11 @@
     &-inner
         +row-flex
         justify-content: center
+    &__avatar
+        width: 80%
+        +md-block
+            width: 30%
+
     &-link
         text-align: center
         width: 100%
@@ -266,6 +275,14 @@
             width: 100%
             margin-top: 15px
 
+/*cancel*/
+.cancel
+    &-inner
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100vh
 /* __debugGrid__ */
 .debugGrid
     height: 100vh
@@ -288,6 +305,14 @@
         background: rgba(0, 0, 0, 0.4)
     @include debugBtn()
 /* __debugGrid__ */
+/*error*/
+.error
+    &-inner
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100vh
 /*first-page*/
 .first-page
     text-align: center
@@ -352,7 +377,7 @@
 
         +md-block
             padding: 60px 40px
-            
+
         &__icon
             flex-basis: 100%
             img
@@ -360,8 +385,17 @@
             +md-block
                 flex-basis: 10%
         &__text
-            
-            font-size: 14px
+            color: #fff
+            background: #2778F1
+            padding: 20px 30px
+            font-size: 16px
+            display: inline-block
+            margin-bottom: 10px
+            border-radius: 30px 30px 30px 0
+            max-width: 100%
+            +md-block
+                max-width: 50%
+            bor
             +md-block
                 flex-basis: 90%
             p
@@ -436,6 +470,26 @@
                     left: 0
                     transform: translate(0)
 
+/*subscription*/
+.subscription
+    .page-title
+        margin-bottom: 20px
+    &-inner
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100vh
+        flex-direction: column
+    #paypal-button-container
+        width: 50%
+/*success*/
+.success
+    &-inner
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100vh
 /*thank-you*/
 .thank-you
     &-inner
